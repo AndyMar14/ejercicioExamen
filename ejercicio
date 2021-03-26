@@ -1,0 +1,57 @@
+using System;
+
+namespace practicas
+{
+
+   class SueldosPresonas
+   {
+       string[] Nombres = new string[5];
+       int[] Salario = new int[5];
+
+       String nombreElMas;
+       int masSueldo;
+
+       public void Personas()
+       {
+           for (int i = 0; i < Nombres.Length; i++)
+           {
+
+               Console.WriteLine("Ingrese el nombre del empleado");
+               Nombres[i] = Console.ReadLine();
+
+               Console.WriteLine("Ingrese su salario");
+               Salario[i] = int.Parse(Console.ReadLine());
+
+               Console.Clear();
+           }
+       }
+
+       public void SalarioSuperior()
+       {
+               int i = 0;
+               masSueldo = Salario[i];
+               nombreElMas = Nombres[i];
+
+               for (i = 0; i < 5; i++)
+               {
+                   if (Salario[i] > masSueldo)
+                   {
+                       masSueldo = Salario[i];
+                       nombreElMas = Nombres[i];
+                   }
+               }
+                Console.WriteLine("El nombre del empleado con el salario mayor es " + nombreElMas);
+                Console.WriteLine("Tiene un salario de: " + masSueldo);
+
+       }
+
+       static void Main()
+       {
+           SueldosPresonas sueldoPersona = new SueldosPresonas();
+           sueldoPersona.Personas();
+           sueldoPersona.SalarioSuperior();
+
+       }
+
+   }
+}
